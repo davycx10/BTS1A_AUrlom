@@ -1,0 +1,37 @@
+.header
+{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100px;
+    background-color: rgba(44, 44, 176, 0.7);
+    align-items: center;
+}
+
+.headerchild
+{
+
+}
+
+.inp
+{
+    background-color: lightgray;
+    font-size: 32px;
+    padding: 5px;
+    border-radius: 21px;
+    width: 100%;
+
+}
+
+.footer {
+    background-color: rgb(40, 40, 40);
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer>img {
+    height: 100px;
+}

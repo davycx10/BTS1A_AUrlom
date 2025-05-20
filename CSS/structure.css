@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100px;
+    background-color: rgb(47, 219, 116);
+    align-items: center;
+}
+
+
+.inp {
+    background-color: rgb(191, 194, 197);
+    font-size: 32px;
+    border-radius: 21px;
+    width: 100%;
+}

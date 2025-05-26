@@ -38,7 +38,12 @@ while (($row = mysqli_fetch_assoc($result)) == true) {
     $marnom = $row['marnom'];
 
 ?>
-<div style='width: 300px; height: 190px; background-color: yellowgreen;'>AAAEAEAEAEAEA</div>
+<div class="article">
+    <div class="gauche" >AAA</div>
+    <div class="millieu">BBB</div>
+    <div class="droite">CCC</div>
+
+</div>
 <?= $artprix ?>
 
 
@@ -57,7 +62,12 @@ mysqli_free_result($result);
 
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
-<?php require_once('footer.php'); ?>
+<?php 
+require_once('footer.php'); 
+?>
+
+
+
 </body>
 </html>
 

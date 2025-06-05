@@ -1,73 +1,70 @@
-<?php 
-require_once('db_PPE.php');
+<?php
+require_once("db_PPE.php");
+session_start();
+
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTS 1 Aurlom</title>
+    <title>BTS 1 A</title>
     <link href="css/design.css" rel="stylesheet" />
 </head>
+
 <body>
+    
+    <?php
+    require_once("header.php");
+    ?>
 
-<?php require_once('header.php'); ?>
+    <?php
+    $sql = "select a.ID_ARTICLE as 'artid' , a.Nom as 'artnom', a.Description as 'artdesc',
+     a.prix as 'artprix', a.Reference as 'artref', a.Configuration as 'artconf' ,
+      m.Nom as 'marnom' from article a join marque m on a.ID_MARQUE = m.ID_MARQUE";
 
-<?php 
-$sql = "SELECT 
-            a.ID_ARTICLE AS artid, 
-            a.NOM AS artnom, 
-            a.Description AS artdesc, 
-            a.prix AS artprix ,
-            a.Reference AS artref, 
-            a.Configuration AS artconf, 
-            m.Nom AS marnom 
-        FROM article a 
-        JOIN marque m ON a.ID_MARQUE = m.ID_MARQUE";
+    $res = mysqli_query($conn, $sql);
 
-$result = mysqli_query($conn, $sql);
+    while (($row = mysqli_fetch_assoc($res)) == true) {
+        $artid = $row["artid"];
+        $artnom = $row["artnom"];
+        $artdesc = $row["artdesc"];
+        $artprix = $row["artprix"];
+        $artref = $row["artref"];
+        $artconf = $row["artconf"];
+        $marnom = $row["marnom"];
+    ?>
 
-while (($row = mysqli_fetch_assoc($result)) == true) {
-    $artid = $row['artid'];
-    $artnom = $row['artnom'];
-    $artdesc = $row['artdesc'];
-    $artprix = $row['artprix'];
-    $artref = $row['artref'];
-    $artconf = $row['artconf'];
-    $marnom = $row['marnom'];
+        <div class="article">
+            <div class="gauche"><img src="Images/<?= $artid ?>.jpg" height=120 /></div>
+            
+            <div class="milieu">
+                <div style="font-size : 18px; color : crimson"><?= $artnom ?></div>
+                <div><?= $artdesc ?></div>
+                <div><?= $artref ?></div>
+                <div><?= $artconf ?></div>
+            </div>
 
-?>
-<div class="article">
-    <div class="gauche" >AAA</div>
-    <div class="millieu">BBB</div>
-    <div class="droite">CCC</div>
-
-</div>
-<?= $artprix ?>
-
-
-
-<?php 
-} // ← fermeture propre de la boucle
-
-// ✅ Ici tu es déjà dans du PHP, inutile de réouvrir avec <?php
-mysqli_free_result($result);
-?>
-
-<h1>Huenco mundo</h1>
+            <div class="droite">
+                <div style="font-size : 32px"><?= $artprix ?> €</div>
+                <div><a href="panier.php?id=<?=$artid ?>"><img src='Logo/basket.png' height=36 /></a></div>
+            </div>
+        </div>
 
 
 
 
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    <?php
+    }
 
-<?php 
-require_once('footer.php'); 
-?>
+    mysqli_free_result($res);
 
+    ?>
 
+    <?php
+    require_once("footer.php");
+    ?>
 
 </body>
-</html>
 
+</html>

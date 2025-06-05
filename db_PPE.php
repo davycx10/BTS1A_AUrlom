@@ -1,12 +1,9 @@
 <?php
-
-define('HOST', 'localhost');
-define('DB_USER', 'adminphp');
-define('DB_PASS', '');
-define('DB_NAME', 'db_PPE');
-
-$conn = mysqli_connect(HOST, DB_USER, DB_PASS, DB_NAME);
-// $query = ("SET CHARACTER SET utf8");
+define("HOST", "localhost");
+define("LOGIN", "adminphp");
+define("PASSWORD", "");
+define("BASE", "db_PPE");
 
 
-// $conn = mysqli_connect(HOST, 'adminphp', '', 'DBVENTE');
+$conn = mysqli_connect(HOST, LOGIN, PASSWORD, BASE);
+$conn->query("SET CHARACTER SET utf8");

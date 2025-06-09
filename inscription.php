@@ -2,35 +2,29 @@
 require_once("db_PPE.php");
 session_start();
 
-?>
+if (count($_GET) > 0) {
+    $login = $_GET["login"];
+    $pwd = $_GET["pwd"];
+    $nom = $_GET["nom"];
+    $prenom = $_GET["prenom"];
 
-<?php
+    $pwd_hash = password_hash($pwd, PASSWORD_DEFAULT);
 
-    if (count($_GET)> 0)
-    {
-        $login = $_GET["login"];
-        $pwd = $_GET["pwd"];
-        $prenom = $_GET["prenom"];
-        $prenom = $_GET["nom"];
+    // Corriger l'ordre des colonnes et des valeurs
+    $sql = "INSERT INTO utilisateurs (Nom, Prenom, Login, MDP) VALUES ('$nom', '$prenom', '$login', '$pwd_hash')";
+    
+    $res = mysqli_query($conn, $sql);
 
-
-        $pwd = password_hash($pwd, PASSWORD_DEFAULT);
-
-        $sql = "insert into utilisateurs (Nom, Prenom, Login, MDP) values ('" . $login . "', '" . $pwd . "', '" . $prenom . "', '" . $nom . "')";
-        $res = mysqli_query($conn, $sql);
-
-
-    if (mysqli_query($conn, $sql)) {
+    if ($res) {
         echo "Compte créé avec succès !";
         header("Location: connexion.php");
         exit;
     } else {
         echo "Erreur : " . mysqli_error($conn);
     }
-
-    }
-
+}
 ?>
+
 
 
 <!DOCTYPE html>
@@ -47,7 +41,10 @@ session_start();
     ?>
     <form class="formulaire" action="" method="GET">
         <p><input type="text" name="login" placeholder="Entrez le login" /></p>
-        <p><input type="text" name="pwd" placeholder="Entrez le password" /></p>
+
+        <p><input type="password" name="pwd" placeholder="Entrez le password" />
+        <button type="button" onclick="togglePassword()">👁️</button></p>
+
         <p><input type="text" name="nom" placeholder="Entrez votre nom" /></p>
         <p><input type="text" name="prenom" placeholder="Entrez votre prénom" /></p>
         <p><input type="submit" name="submit" value="Inscription" /></p>
@@ -60,6 +57,21 @@ session_start();
     <?php
     require_once("footer.php");
     ?>
+
+
+
+<script>
+function togglePassword() {
+    const pwdField = document.getElementById("pwd");
+    if (pwdField.type === "password") {
+        pwdField.type = "text";
+    } else {
+        pwdField.type = "password";
+    }
+}
+</script>
+
+
 </body>
 
 </html>

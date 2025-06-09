@@ -33,6 +33,22 @@ if (count($_GET) > 0) {
     <meta charset="UTF-8">
     <title>BTS 1 A - Inscription</title>
     <link href="css/design.css" rel="stylesheet" />
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#togglePassword').click(function() {
+                var x = $('#pwd');
+                if(x.attr("type") === "password"){
+                    x.attr('type', 'text');
+                } else {
+                    x.attr('type', 'password');
+                }
+            });
+        });
+    </script>
+
 </head>
 
 <body>
@@ -42,16 +58,25 @@ if (count($_GET) > 0) {
     <form class="formulaire" action="" method="GET">
         <p><input type="text" name="login" placeholder="Entrez le login" /></p>
 
-        <p><input type="password" name="pwd" placeholder="Entrez le password" />
-        <button type="button" onclick="togglePassword()">👁️</button></p>
-
         <p><input type="text" name="nom" placeholder="Entrez votre nom" /></p>
         <p><input type="text" name="prenom" placeholder="Entrez votre prénom" /></p>
-        <p><input type="submit" name="submit" value="Inscription" /></p>
+       
+        <br>
 
+    <div class="password-container">
+    <input type="password" name="pwd" id="pwd" placeholder="Entrez le mot de passe" />
+    <img src="Images/feather--eye.svg" id="togglePassword" alt="Afficher le mot de passe">
+</div>
+
+<br>
+
+ <p><input type="submit" name="submit" value="Inscription" /></p>
     </form>
 
     <p><a href="inscription.php" target = "_blank" >Nouvel utilisateur ?</a></p>
+
+    <!-- <p><a href="inscription.php"> Vous avez deja un compte ?</a></p> -->
+
 
 
     <?php
@@ -60,16 +85,7 @@ if (count($_GET) > 0) {
 
 
 
-<script>
-function togglePassword() {
-    const pwdField = document.getElementById("pwd");
-    if (pwdField.type === "password") {
-        pwdField.type = "text";
-    } else {
-        pwdField.type = "password";
-    }
-}
-</script>
+
 
 
 </body>

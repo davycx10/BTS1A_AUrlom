@@ -43,6 +43,21 @@ session_start();
     <meta charset="UTF-8">
     <title>BTS 1 A - Connexion</title>
     <link href="css/design.css" rel="stylesheet" />
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#togglePassword').click(function() {
+                var x = $('#pwd');
+                if(x.attr("type") === "password"){
+                    x.attr('type', 'text');
+                } else {
+                    x.attr('type', 'password');
+                }
+            });
+        });
+    </script>
+
 </head>
 
 <body>
@@ -51,7 +66,16 @@ session_start();
     ?>
     <form class ="formulaire" action="#" method="GET">
         <p><input type="text" name="login" placeholder="Entrez le login" /></p>
-        <p><input type="text" name="pwd" placeholder="Entrez le password" /></p>
+
+<br>
+        <div class="password-container">
+            <input type="password" name="pwd" id="pwd" placeholder="Entrez le mot de passe" />
+            <img src="Images/feather--eye.svg" id="togglePassword" alt="Afficher le mot de passe">
+        </div>
+
+<br>
+
+
         <p class="submit"><input type="submit" name="submit" value="Connexion" /></p>
     </form>
 

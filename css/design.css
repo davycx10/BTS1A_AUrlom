@@ -1,6 +1,6 @@
-body{
+body {
     margin: 0;
-     padding-bottom: 120px;
+    padding-bottom: 120px;
 }
 
 
@@ -34,7 +34,7 @@ body{
     bottom: 0px;
     width: 100%;
     position: fixed;
-    
+
 }
 
 .footer>img {
@@ -43,11 +43,11 @@ body{
 
 .article {
     background-color: white;
-    border : solid 2px darkgray;
+    border: solid 2px darkgray;
     width: 80%;
     height: 160px;
     margin: auto;
-    margin-top : 10px;
+    margin-top: 10px;
     border-radius: 18px;
     box-shadow: 4px 9px 3px darkslategray;
     display: flex;
@@ -56,29 +56,31 @@ body{
     overflow: hidden;
 }
 
-.gauche {    
-    width : 160px;
+.gauche {
+    width: 160px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .milieu {
-    width : 80%;
-    display : flex;
+    width: 80%;
+    display: flex;
     flex-direction: column;
     justify-content: left;
-    padding : 10px;
+    padding: 10px;
 }
 
 .droite {
-    width : 200px;
+    width: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    
+
 }
+
+
 
 
 
@@ -87,7 +89,50 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 }
+
+
+
+
+
+
+
+
+
+
+
+.formulaire input[type="text"],
+.formulaire input[type="password"],
+.formulaire input[type="email"] {
+    border-color: black;
+    border-radius: 5px;
+    width: 250px;
+    height: 30px;
+    font-size: 14px;
+    padding-left: 8px;
+    padding-right: 35px;
+    border-radius: 9px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+
+}
+
+
+
+
+
+
+
+
+/* .formulaire input{
+  border-radius: 9px;  
+  width: 100%;
+  padding-right: 35px;
+  height: 25px;
+  font-size: 14px;
+  box-sizing: border-box;
+}  */
 
 
 /* .submit {
@@ -102,4 +147,35 @@ input[type="submit"] {
     border-radius: 5px;
     color: white;
     background: #ff0000e8;
+}
+
+
+
+.password-container {
+    position: relative;
+    width: 250px;
+    margin-bottom: 10px;
+}
+
+/* .password-container input[type="password"] {
+  width: 100%;
+  padding-right: 45px;
+  height: 30px;
+  font-size: 14px;
+  box-sizing: border-box;
+} */
+
+.password-container img {
+    position: absolute;
+    top: 40%;
+    right: 8px;
+    transform: translateY(-50%);
+    height: 18px;
+    width: 18px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.password-container img:hover {
+    opacity: 1;
 }

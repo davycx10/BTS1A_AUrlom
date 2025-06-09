@@ -17,7 +17,7 @@ session_start();
         {
             $row = mysqli_fetch_assoc($res);
             $MDP = $row["MDP"];
-            if (password_verify($login, $MDP) == true)
+            if (password_verify($pwd, $MDP) == true)
             {
                 $_SESSION["ID"] = $row["ID_UTILISATEUR"];
                 header('Location: index.php');
@@ -73,7 +73,7 @@ session_start();
             <img src="Images/feather--eye.svg" id="togglePassword" alt="Afficher le mot de passe">
         </div>
 
-<br>
+ <br>
 
 
         <p class="submit"><input type="submit" name="submit" value="Connexion" /></p>

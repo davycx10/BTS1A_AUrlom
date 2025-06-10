@@ -106,13 +106,12 @@ body {
 .formulaire input[type="password"],
 .formulaire input[type="email"] {
     border-color: black;
-    border-radius: 9px;
+border-radius: 15px;
     width: 250px;
     height: 30px;
     font-size: 14px;
     padding-left: 8px;
     padding-right: 35px;
-
     box-sizing: border-box;
     margin-bottom: 10px;
 

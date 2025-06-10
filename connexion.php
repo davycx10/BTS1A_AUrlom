@@ -45,6 +45,7 @@ session_start();
     <link href="css/design.css" rel="stylesheet" />
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script>
         $(document).ready(function(){
             $('#togglePassword').click(function() {
@@ -61,9 +62,11 @@ session_start();
 </head>
 
 <body>
+
     <?php
     require_once("header.php");
     ?>
+
     <form class ="formulaire" action="#" method="GET">
         <p><input type="text" name="login" placeholder="Entrez le login" /></p>
 
@@ -79,12 +82,13 @@ session_start();
         <p class="submit"><input type="submit" name="submit" value="Connexion" /></p>
     </form>
 
-    <p><a href="inscription.php">Nouvel utilisateur ?</a></p>
+    <p> <a href="inscription.php">Nouvel utilisateur ?</a> </p>
 
 
     <?php
     require_once("footer.php");
     ?>
+    
 </body>
 
 </html>

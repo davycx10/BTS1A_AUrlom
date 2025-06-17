@@ -2,8 +2,8 @@
     <div class="headerchild"><a href="index.php"><img src="Logo/logo.png" height=80></a></div>
 
     <div class="headerchild">
-        <form action="search.php" method="GET" name="findit">
-            <input type="text" name="chose" placeholder="Rechercher ..." class="inp"/>
+        <form action="index.php" method="GET" name="findit">
+            <input type="text" name="choose" placeholder="Rechercher ..." class="inp"/>
         </form>
     </div>
 

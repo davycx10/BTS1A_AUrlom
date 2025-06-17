@@ -2,11 +2,35 @@
 require_once("db_PPE.php");
 session_start();
 
-if (isset($_GET["id"])) {
-    $id = $_GET["id"];
-    echo $id;
+if (isset($_SESSION["ID"]) == false)
+{
+    header("Location: connexion.php");
 }
 ?>
+
+<?php
+
+if (isset($_GET["id"]) == true)
+{
+    $id = $_GET["id"];
+    $userid = $_SESSION["ID"];
+    $sql = "select * from panier where ID_UTILISATEUR = $userid and ID_PANIER = $id";
+
+    $res = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($res) == 0)
+{
+    $sqladd = "INSERT INTO panier VALUES (null,1,$userid,$id)";
+    $res = mysqli_query($conn, $sqladd);
+
+}
+
+
+}
+
+
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -39,10 +63,10 @@ while ($row = mysqli_fetch_assoc($res)) {
     $prixart = $row["prixart"];
     $idpan = $row["idpan"];
 
-    ?>
+?>
 
 
-            <div class="article">
+        <div class="article">
             <div class="gauche"><img src="Images/<?= $idart ?>.jpg" height=120 /></div>
             
             <div class="milieu">

@@ -2,6 +2,17 @@
 require_once("db_PPE.php");
 session_start();
 
+if (isset($_GET["choose"]) == true)
+{
+    $searchcrit = "where a.Nom like '%ù" 
+    $rech = $_GET["choose"];    
+}
+else
+{
+$searchcrit = "";
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +30,7 @@ session_start();
     ?>
 
     <?php
+
     $sql = "select a.ID_ARTICLE as 'artid' , a.Nom as 'artnom', a.Description as 'artdesc',
      a.prix as 'artprix', a.Reference as 'artref', a.Configuration as 'artconf' ,
       m.Nom as 'marnom' from article a join marque m on a.ID_MARQUE = m.ID_MARQUE";

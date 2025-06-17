@@ -13,7 +13,7 @@ session_start();
     <meta charset="UTF-8">
     <title>BTS 1 A - Panier</title>
     <link href="css/design.css" rel="stylesheet" />
-    <link href="css/test.css" rel="stylesheet" />
+    
 
     
 

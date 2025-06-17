@@ -4,8 +4,9 @@ session_start();
 
 if (isset($_GET["choose"]) == true)
 {
-    $searchcrit = "where a.Nom like '%ù" 
-    $rech = $_GET["choose"];    
+    $rech = $_GET["choose"];  
+    $searchcrit = " where a.Nom like '%$rech%'";
+  
 }
 else
 {
@@ -33,7 +34,10 @@ $searchcrit = "";
 
     $sql = "select a.ID_ARTICLE as 'artid' , a.Nom as 'artnom', a.Description as 'artdesc',
      a.prix as 'artprix', a.Reference as 'artref', a.Configuration as 'artconf' ,
-      m.Nom as 'marnom' from article a join marque m on a.ID_MARQUE = m.ID_MARQUE";
+      m.Nom as 'marnom' from article a join marque m on a.ID_MARQUE = m.ID_MARQUE" . $searchcrit;
+
+
+
 
     $res = mysqli_query($conn, $sql);
 

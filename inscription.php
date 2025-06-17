@@ -52,6 +52,7 @@ if (count($_GET) > 0) {
 </head>
 
 <body>
+    
     <?php
     require_once("header.php");
     ?>

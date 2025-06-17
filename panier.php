@@ -43,6 +43,10 @@ if (isset($_GET["id"]) == true)
 
 <?php require_once("header.php"); ?>
 
+
+
+<button class="commande" onclick = "alert('commande envoyée'); window.location.href = 'index.php'"> Passer la commande </button>
+
 <?php
 $sql = "select * from panier";
 $iduser = $_SESSION["ID"] ;

@@ -2,10 +2,6 @@
 require_once("db_PPE.php");
 session_start();
 
-?>
-
-<?php
-
     if (count($_GET)> 0)
     {
         $login = $_GET["login"];
@@ -19,19 +15,15 @@ session_start();
             $MDP = $row["MDP"];
             if (password_verify($pwd, $MDP) == true)
             {
-                $_SESSION["ID"] = $row["ID_UTILISATEUR"];
                 header('Location: index.php');
+                $_SESSION["ID"] = $row["ID_UTILISATEUR"];
+                
             }
             else
             {
                 echo "Identifants incorrects";
             }
         }
-        else
-        {
-            echo "Identifants incorrects";
-        }
-
     }
 
 ?>

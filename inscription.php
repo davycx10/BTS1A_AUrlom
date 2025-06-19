@@ -16,8 +16,8 @@ if (count($_GET) > 0) {
     $res = mysqli_query($conn, $sql);
 
     if ($res) {
-        echo "Compte créé avec succès !";
         header("Location: connexion.php");
+        echo "";
         exit;
     } else {
         echo "Erreur : " . mysqli_error($conn);

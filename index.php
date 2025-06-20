@@ -63,7 +63,7 @@ $searchcrit = "";
 
             <div class="droite">
                 <div style="font-size : 32px"><?= $artprix ?> €</div>
-                <div id=<?=$artid ?>><a href="panier.php?id=<?=$artid ?>"><img src='Logo/basket.png' height=36 /></a></div>
+                <div id="article-<?=$artid ?>"><a href="panier.php?id=<?=$artid ?>"><img src='Logo/basket.png' height=36 /></a></div>
             </div>
         </div>
 

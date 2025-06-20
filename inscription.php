@@ -57,10 +57,10 @@ if (count($_GET) > 0) {
     require_once("header.php");
     ?>
     <form class="formulaire" action="" method="GET">
-        <p><input type="text" name="login" placeholder="Entrez le login" /></p>
+        <p><input id="Add_login" type="text" name="login" placeholder="Entrez le login" /></p>
 
-        <p><input type="text" name="nom" placeholder="Entrez votre nom" /></p>
-        <p><input type="text" name="prenom" placeholder="Entrez votre prénom" /></p>
+        <p><input id="Add_name" type="text" name="nom" placeholder="Entrez votre nom" /></p>
+        <p><input id="Add_prenom" type="text" name="prenom" placeholder="Entrez votre prénom" /></p>
        
         <br>
 
@@ -71,10 +71,10 @@ if (count($_GET) > 0) {
 
 <br>
 
- <p><input type="submit" name="submit" value="Inscription" /></p>
+ <p><input id="submit_inscription" type="submit" name="submit" value="Inscription" /></p>
     </form>
 
-    <p><a href="inscription.php" target = "_blank" >Nouvel utilisateur ?</a></p>
+    <!-- <p><a href="inscription.php" target = "_blank" >Nouvel utilisateur ?</a></p> -->
 
     <!-- <p><a href="inscription.php"> Vous avez deja un compte ?</a></p> -->
 

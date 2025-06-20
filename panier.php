@@ -45,7 +45,7 @@ if (isset($_GET["id"]) == true)
 
 
 
-<button class="commande" onclick = "alert('commande envoyée'); window.location.href = 'index.php'"> Passer la commande </button>
+<button class="commande" id="commande" onclick = "alert('commande envoyée'); window.location.href = 'index.php'"> Passer la commande </button>
 
 <?php
 $sql = "select * from panier";
@@ -81,7 +81,7 @@ while ($row = mysqli_fetch_assoc($res)) {
             </div>
 
             <div class="droite">
-                <div style="font-size : 32px; color: red "> <a style="color: red" href="delpan.php?idpan=<?= $idpan ?>"> supprimer </a></div>
+                <div id="supp" style="font-size : 32px; color: red "> <a style="color: red" href="delpan.php?idpan=<?= $idpan ?>"> supprimer </a></div>
                 
             </div>
         </div>

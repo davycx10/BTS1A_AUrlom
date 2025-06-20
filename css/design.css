@@ -95,13 +95,6 @@ body {
 
 
 
-
-
-
-
-
-
-
 .formulaire input[type="text"],
 .formulaire input[type="password"],
 .formulaire input[type="email"] {
@@ -119,25 +112,6 @@ border-radius: 15px;
 
 
 
-
-
-
-
-
-/* .formulaire input{
-  border-radius: 9px;  
-  width: 100%;
-  padding-right: 35px;
-  height: 25px;
-  font-size: 14px;
-  box-sizing: border-box;
-}  */
-
-
-/* .submit {
-    border: 1px #d40707;
-
-} */
 
 input[type="submit"] {
     border: 21px #ff0000;
@@ -195,3 +169,4 @@ input[type="submit"] {
  font-size: 28px;
  box-shadow: 4px 9px 3px darkslategray;
 }
+

@@ -60,7 +60,7 @@ session_start();
     ?>
 
     <form class ="formulaire" action="#" method="GET">
-        <p><input type="text" name="login" placeholder="Entrez le login" /></p>
+        <p><input id="Add_login_connexion" type="text" name="login" placeholder="Entrez le login" /></p>
 
 <br>
         <div class="password-container">
@@ -71,10 +71,10 @@ session_start();
  <br>
 
 
-        <p class="submit"><input type="submit" name="submit" value="Connexion" /></p>
+        <p class="submit" id="submit_connexion"><input type="submit" name="submit" value="Connexion" /></p>
     </form>
 
-    <p> <a href="inscription.php">Nouvel utilisateur ?</a> </p>
+    <p> <a style="color: blue" id="inscription" href="inscription.php">Nouvel utilisateur ?</a> </p>
 
 
     <?php

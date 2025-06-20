@@ -74,7 +74,7 @@ session_start();
         <p class="submit" id="submit_connexion"><input type="submit" name="submit" value="Connexion" /></p>
     </form>
 
-    <p> <a style="color: blue" id="inscription" href="inscription.php">Nouvel utilisateur ?</a> </p>
+    <p> <a style="color: blue" id="go_to_inscription" href="inscription.php">Nouvel utilisateur ?</a> </p>
 
 
     <?php

@@ -31,9 +31,9 @@ $searchcrit = "";
             .then(response => response.text())
             .then(data => {
               if (data === "OK") {
-                alert("Article ajouté au panier !");
+                console.log("Article ajouté au panier !");
               } else {
-                alert("Erreur : " + data);
+                console.log("Erreur : " + data);
               }
             });
         

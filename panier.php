@@ -6,9 +6,6 @@ if (isset($_SESSION["ID"]) == false)
 {
     header("Location: connexion.php");
 }
-?>
-
-<?php
 
 if (isset($_GET["id"]) == true)
 {
@@ -26,8 +23,6 @@ if (isset($_GET["id"]) == true)
 
 
 }
-
-
 
 ?>
 

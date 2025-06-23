@@ -22,6 +22,24 @@ $searchcrit = "";
     <meta charset="UTF-8">
     <title>BTS 1 A</title>
     <link href="css/design.css" rel="stylesheet" />
+
+    <script>
+        // Fonction pour ajouter un article au panier
+        function ajouterAuPanier(id) {
+          // On demande au serveur d'ajouter l'article
+          fetch('ajouter_au_panier.php?id=' + id)
+            .then(response => response.text())
+            .then(data => {
+              if (data === "OK") {
+                alert("Article ajouté au panier !");
+              } else {
+                alert("Erreur : " + data);
+              }
+            });
+        
+        }
+    </script>
+
 </head>
 
 <body>
@@ -63,7 +81,19 @@ $searchcrit = "";
 
             <div class="droite">
                 <div style="font-size : 32px"><?= $artprix ?> €</div>
-                <div id="article-<?=$artid ?>"><a href="panier.php?id=<?=$artid ?>"><img src='Logo/basket.png' height=36 /></a></div>
+
+
+
+                <div id="article-<?=$artid ?>">
+
+                    <a href="#" onclick="ajouterAuPanier(<?=$artid ?>); return false;">
+                      <img src='Logo/basket.png' height=36 />
+                    </a>
+
+                </div>
+
+
+                
             </div>
         </div>
 
